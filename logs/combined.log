@@ -1,0 +1,2 @@
+{"level":"info","message":"Received request for root endpoint and we are ready to run","service":"acquisitions-api","timestamp":"2026-06-12T13:12:05.022Z"}
+{"level":"info","message":"::1 - - [12/Jun/2026:13:12:05 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.124.2 Chrome/148.0.7778.97 Electron/42.2.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2026-06-12T13:12:05.030Z"}
