@@ -42,7 +42,7 @@ export default [
       'indent': ['error', 2],
       'comma-dangle': ['error', 'always-multiline'],
       'linebreak-style': ['error', 'unix'],
-      'max-len': ['warn', { code: 100, comments: 120 }],
+      'max-len': ['warn', { code: 120, comments: 120 }],
       'no-multiple-empty-lines': 'error',
       'camelcase': 'warn',
 
