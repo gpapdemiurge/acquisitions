@@ -27,3 +27,7 @@
 {"level":"info","message":"::1 - - [16/Jun/2026:12:54:53 +0000] \"GET /sign-up HTTP/1.1\" 404 146 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.124.2 Chrome/148.0.7778.97 Electron/42.2.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2026-06-16T12:54:53.473Z"}
 {"level":"info","message":"Sign-up route accessed","method":"GET","service":"acquisitions-api","timestamp":"2026-06-16T12:55:25.103Z"}
 {"level":"info","message":"::1 - - [16/Jun/2026:12:55:25 +0000] \"GET /api/auth/sign-up HTTP/1.1\" 200 78 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.124.2 Chrome/148.0.7778.97 Electron/42.2.0 Safari/537.36\"","service":"acquisitions-api","timestamp":"2026-06-16T12:55:25.105Z"}
+{"action":"create-user","level":"info","message":"Create user request received","service":"acquisitions-api","timestamp":"2026-06-16T15:39:55.385Z"}
+{"error":"Invalid input: expected object, received undefined","level":"info","message":"Create user validation failed","service":"acquisitions-api","timestamp":"2026-06-16T15:39:55.388Z"}
+{"action":"create-user","level":"info","message":"Create user request started","service":"acquisitions-api","timestamp":"2026-06-16T15:52:01.901Z"}
+{"level":"info","message":"Create user request completed","role":"user","service":"acquisitions-api","timestamp":"2026-06-16T15:52:02.924Z","userId":1}

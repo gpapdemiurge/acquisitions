@@ -8,6 +8,37 @@ import { formatValidationErrors } from '../utils/format.js';
 import { jwttoken } from '../utils/jwt.js';
 import { signinSchema, signupSchema } from '../validations/auth.validation.js';
 
+export const createUser = async (userData) => {
+  logger.info('Create user request started', { action: 'create-user' });
+
+  const parsed = signupSchema.parse(userData);
+
+  const existingUsers = await db.select().from(users).where(eq(users.email, parsed.email));
+
+  if (existingUsers.length > 0) {
+    logger.info('Create user request rejected', { reason: 'email already exists' });
+    const error = new Error('User already exists');
+    error.statusCode = 409;
+    throw error;
+  }
+
+  const hashedPassword = await bcrypt.hash(parsed.password, 10);
+
+  const [user] = await db.insert(users).values({
+    ...parsed,
+    password: hashedPassword,
+  }).returning();
+
+  logger.info('Create user request completed', { userId: user.id, role: user.role });
+
+  return {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+  };
+};
+
 export const signUpStatus = async (req, res) => {
   logger.info('Sign-up route accessed', { method: req.method });
 
@@ -116,3 +147,5 @@ export const signOut = async (req, res) => {
 
   return res.status(200).json({ message: 'Signed out successfully' });
 };
+
+
